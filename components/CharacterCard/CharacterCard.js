@@ -3,15 +3,15 @@ export function CharacterCard(
   characterName,
   characterStatus,
   characterType,
-  characterEpisodeLength
+  characterOccurrences
 ) {
-  const li = document.createElement("li");
-  li.classList.add("card");
+  const createdList = document.createElement("li");
+  createdList.classList.add("card");
 
-  li.innerHTML = `
+  createdList.innerHTML = `
 <div class="card__image-container">
-<img class="card__image" src="${characterImage}" alt"${characterName}">
-<div class="card__image-gradient"></div>
+    <img class="card__image" src="${characterImage}" alt"${characterName}">
+    <div class="card__image-gradient"></div>
 </div>
 <div class="card__content">
 <h2 class=" card__title">${characterName}</h2>
@@ -21,9 +21,9 @@ export function CharacterCard(
         <dt class="card__info-title">Type</dt>
         <dd class="card__info-description">${characterType}</dd>
         <dt class="card__info-title">Occurrences</dt>
-        <dd class="card__info-description">${characterEpisodeLength}</dd>
+        <dd class="card__info-description">${characterOccurrences}</dd>
     </dl>
     </div>
 `;
-  //return li;
+  return createdList;
 }
