@@ -1,4 +1,4 @@
-//what we need
+// anleitung
 // submit event listener on search Bar
 // search query update with current text inside when event is triggered
 // search bar = form
