@@ -25,6 +25,10 @@ async function fetchCharacters() {
   const data = await response.json();
 }
 
+innerHTML = "";
+
+fetchCharacters();
+
 export {
   cardContainer,
   searchBarContainer,
