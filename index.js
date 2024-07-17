@@ -1,5 +1,6 @@
 import { CharacterCard } from "./components/CharacterCard/CharacterCard.js";
-//test
+import { SearchBar } from "./components/SearchBar/SearchBar.js";
+
 const cardContainer = document.querySelector('[data-js="card-container"]');
 const searchBarContainer = document.querySelector(
   '[data-js="search-bar-container"]'
@@ -12,16 +13,16 @@ const pagination = document.querySelector('[data-js="pagination"]');
 
 // States
 const maxPage = 1;
-const page = 1;
-const searchQuery = "";
+let page = 1;
+// let searchQuery;
 
-export const apiEndpointUrl = "https://rickandmortyapi.com/api/character";
+export const url = "https://rickandmortyapi.com/api/character";
 
-export async function fetchCharacters(url) {
-  const response = await fetch(url);
+export async function fetchCharacters(query = "") {
+  const searchQuery = `?name=${query}`;
+  const response = await fetch(url + searchQuery);
 
   const data = await response.json();
-  console.log(data);
 
   cardContainer.innerHTML = "";
 
@@ -37,17 +38,6 @@ export async function fetchCharacters(url) {
   });
 }
 
-fetchCharacters(apiEndpointUrl);
+fetchCharacters();
 
-export {
-  cardContainer,
-  searchBarContainer,
-  searchBar,
-  navigation,
-  prevButton,
-  nextButton,
-  pagination,
-  maxPage,
-  page,
-  searchQuery,
-};
+searchBarContainer.append(SearchBar(fetchCharacters));
