@@ -9,4 +9,11 @@ import {
   searchQuery,
 } from "./index.js";
 
-searchBar.addEventListener("submit", () => {});
+searchBar.addEventListener("submit", (event) => {
+  event.preventDefault();
+  const formData = new FormData(event.target);
+  const data = Object.fromEntries(formData);
+  console.log("hi");
+});
+
+console.log("hi");
