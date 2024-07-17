@@ -8,4 +8,4 @@
 // - page index ändert sich
 // - fetch characters wird richtig gecallt
 
-//3/ aktualisieren des pagination displays
+//3/ aktualisieren des pagination displays//
