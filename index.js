@@ -1,4 +1,4 @@
-import { CharacterCard } from "./CharacterCard/CharacterCard.js"; // js folgt
+import { CharacterCard } from "./CharacterCard/CharacterCard.js";
 
 const cardContainer = document.querySelector('[data-js="card-container"]');
 const searchBarContainer = document.querySelector(
@@ -21,15 +21,15 @@ async function fetchCharacters() {
   const response = await fetch(apiEndpointUrl);
 
   const data = await response.json();
+  console.log(data);
 
   innerHTML = "";
 
   data.results.forEach((element) => {
     const characterCard = CharacterCard(element);
-    // ?? cardContainer.append(characterCard);
+    cardContainer.append(characterCard);
   });
 }
-console.log(data);
 
 fetchCharacters();
 
