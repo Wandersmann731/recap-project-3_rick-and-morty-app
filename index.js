@@ -1,4 +1,4 @@
-import { CharacterCard } from "./CharacterCard.js"; // js folgt
+import { CharacterCard } from "./CharacterCard/CharacterCard.js"; // js folgt
 
 const cardContainer = document.querySelector('[data-js="card-container"]');
 const searchBarContainer = document.querySelector(
@@ -16,16 +16,16 @@ const page = 1;
 const searchQuery = "";
 
 async function fetchCharacters() {
-  const apiEndpointUrl = "https://rickandmortyapi.com/api/character";
+  const apiEndpointUrl = "https://rickandmortyapi.com/api/character"; // url enpoint correct?
 
-  const response = await fetch(
-    "https://rickandmortyapi.com/api/character" // url enpoint correct?
-  );
+  const response = await fetch(apiEndpointUrl);
 
   const data = await response.json();
+
+  console.log(data);
 }
 
-innerHTML = "";
+// innerHTML = "";
 
 fetchCharacters();
 
