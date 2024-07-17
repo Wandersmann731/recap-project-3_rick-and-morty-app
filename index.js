@@ -22,10 +22,14 @@ async function fetchCharacters() {
 
   const data = await response.json();
 
-  console.log(data);
-}
+  innerHTML = "";
 
-// innerHTML = "";
+  data.results.forEach((element) => {
+    const characterCard = CharacterCard(element);
+    // ?? cardContainer.append(characterCard);
+  });
+}
+console.log(data);
 
 fetchCharacters();
 
