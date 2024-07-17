@@ -16,10 +16,10 @@ const page = 1;
 const searchQuery = "";
 
 async function fetchCharacters() {
-  const apiEndpointUrl = "https://rickandmortyapi.com/api/character?page=1";
+  const apiEndpointUrl = "https://rickandmortyapi.com/api/character";
 
   const response = await fetch(
-    "https://rickandmortyapi.com/api/character?page=1"
+    "https://rickandmortyapi.com/api/character" // url enpoint correct?
   );
 
   const data = await response.json();
